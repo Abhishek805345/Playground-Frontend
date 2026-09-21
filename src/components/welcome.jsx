@@ -1,31 +1,36 @@
 import { Link } from "react-router-dom"
-
+import css from "../style/welcome.module.css";
 export function Nav(){
   return (
-    <nav>
+    <nav className={css.nav}>
       <div>
-        <Link to="">
-          Home
+        <Link to="" className={css.linkbut}>
+          Playground
         </Link>
       </div>
       <div>
-        <Link to="">
+        <Link to="" className={css.linkbut}>
           Events
         </Link>
       </div>
       <div>
-        <Link to="">
+        <Link to="" className={css.linkbut}>
           Leader Board
         </Link>
       </div>
       <div>
-        <Link to="">
+        <Link to="" className={css.linkbut}>
           store
         </Link>
       </div>
       <div>
-        <Link to="">
+        <Link to="" className={css.linkbut}>
           Login
+        </Link>
+      </div>
+       <div>
+        <Link to="" className={css.linkbut}>
+          Notification
         </Link>
       </div>
     </nav>
