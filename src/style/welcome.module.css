@@ -4,16 +4,30 @@
   padding:0%;
   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: small;
+  font-display: auto;
+  font-weight: 400;
 }
 .nav{
   border:1px solid #efe4da96;
   border-radius: 1.1rem;
-  background-color: #efe4da96;
+  background-color: #f9f7f496;
   display: flex;
   justify-content: space-around;
   margin:11px;
   padding:11px;
 }
+.logo{
+  text-decoration: none;
+  color: black;
+
+  /* Added */
+  letter-spacing: 0.3px;
+  padding: 9px 116px;
+  border-radius: 0.7rem;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
 .linkbut {
   text-decoration: none;
   color: black;
@@ -36,4 +50,17 @@
 /* Click effect */
 .linkbut:active {
   transform: translateY(0);
+}
+.login{
+  text-decoration: none;
+  color: black;
+
+  /* Added */
+  letter-spacing: 0.3px;
+  padding: 9px 16px;
+  border:1px solid rgb(233, 213, 82);
+  background-color:lab(81.03% 10.39 83.04) ;
+  border-radius: 0.7rem;
+  transition: all 0.25s ease;
+  display: inline-block;
 }

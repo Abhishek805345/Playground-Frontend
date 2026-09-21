@@ -4,7 +4,7 @@ export function Nav(){
   return (
     <nav className={css.nav}>
       <div>
-        <Link to="" className={css.linkbut}>
+        <Link to="" className={css.logo}>
           Playground
         </Link>
       </div>
@@ -25,12 +25,12 @@ export function Nav(){
       </div>
       <div>
         <Link to="" className={css.linkbut}>
-          Login
+          Notification
         </Link>
       </div>
-       <div>
-        <Link to="" className={css.linkbut}>
-          Notification
+      <div>
+        <Link to="" className={css.login}>
+          Login
         </Link>
       </div>
     </nav>
