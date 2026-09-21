@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import css from "../style/hero.module.css";
 import { Nav } from "./welcome";
 
@@ -32,13 +33,13 @@ export function Hero(){
         </p>
 
         <div className={css.buttons}>
-          <button className={css.primaryBtn}>
+          <Link className={css.primaryBtn}>
             Explore Players <span>→</span>
-          </button>
+          </Link>
 
-          <button className={css.secondaryBtn}>
+          <Link className={css.secondaryBtn}>
             Explore Events
-          </button>
+          </Link>
         </div>
 
         <div className={css.stats}>
