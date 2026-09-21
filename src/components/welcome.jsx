@@ -20,7 +20,7 @@ export function Nav(){
       </div>
       <div>
         <Link to="" className={css.linkbut}>
-          store
+          Store
         </Link>
       </div>
       <div>

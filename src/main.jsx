@@ -3,11 +3,12 @@ import { createRoot } from 'react-dom/client'
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
 import App from './App.jsx'
 import { sessionLoader,Nav } from './components/welcome.jsx';
+import { Hero } from './components/hero.jsx';
 
 const routes=createBrowserRouter([
   {
     path:"/",
-    element:<Nav/>,
+    element:<Hero/>,
     loader:sessionLoader
   }
 ])

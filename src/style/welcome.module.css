@@ -8,9 +8,9 @@
   font-weight: 400;
 }
 .nav{
-  border:1px solid #efe4da96;
+  border:0.3px solid #9d999696;
   border-radius: 1.1rem;
-  background-color: #f9f7f496;
+  background-color: #61605e70;
   display: flex;
   justify-content: space-around;
   margin:11px;
@@ -18,7 +18,7 @@
 }
 .logo{
   text-decoration: none;
-  color: black;
+  color: white;
 
   /* Added */
   letter-spacing: 0.3px;
@@ -30,7 +30,7 @@
 
 .linkbut {
   text-decoration: none;
-  color: black;
+  color: white;
 
   /* Added */
   letter-spacing: 0.3px;
