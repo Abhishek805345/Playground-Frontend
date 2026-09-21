@@ -1,7 +1,5 @@
 .hero {
-  z-index: -1;
-  position: fixed;
-  top: 0px;
+  position: relative;
   min-height: calc(100vh - 9px);
   width: 100%;
   overflow: hidden;

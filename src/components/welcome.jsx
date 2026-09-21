@@ -4,7 +4,7 @@ export function Nav(){
   return (
     <nav className={css.nav}>
       <div>
-        <Link to="" className={css.logo}>
+        <Link to="/" className={css.logo}>
           Playground
         </Link>
       </div>

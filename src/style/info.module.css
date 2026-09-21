@@ -1,0 +1,213 @@
+.outerdiv {
+  width: 100%;
+  padding: 90px 7% 100px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+
+  background: #080b0f;
+  color: white;
+}
+
+
+/* Individual cards */
+
+.innerdiv {
+  position: relative;
+
+  padding: 32px;
+
+  min-height: 250px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* Gold accent line */
+
+.innerdiv::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: #f5bd27;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* Card hover */
+
+.innerdiv:hover {
+  transform: translateY(-6px);
+
+  background: rgba(255, 255, 255, 0.055);
+
+  border-color: rgba(245, 189, 39, 0.45);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.innerdiv:hover::before {
+  transform: scaleX(1);
+}
+
+
+/* Heading */
+
+.innerdiv h2 {
+  margin: 0 0 18px;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+  color: #f5f5f5;
+}
+
+
+/* Highlight first word / heading feel */
+
+.innerdiv h2::after {
+  content: "";
+
+  display: block;
+
+  width: 35px;
+  height: 2px;
+
+  margin-top: 10px;
+
+  background: #f5bd27;
+}
+
+
+/* Paragraph */
+
+.innerdiv p {
+  margin: 0;
+
+  max-width: 600px;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: #9da3ad;
+}
+
+
+/* Register link */
+
+.innerdiv a {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-top: 25px;
+
+  padding: 11px 20px;
+
+  border-radius: 8px;
+
+  background: #f5bd27;
+
+  color: #111;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.innerdiv a:hover {
+  transform: translateY(-2px);
+
+  background: #ffd45a;
+
+  box-shadow:
+    0 8px 20px rgba(245, 189, 39, 0.2);
+}
+
+
+/* --------------------------------
+   MATCH DAY CARD
+-------------------------------- */
+
+.innerdiv:last-child {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(245, 189, 39, 0.08),
+      rgba(255, 255, 255, 0.025)
+    );
+}
+
+
+/* --------------------------------
+   RESPONSIVE
+-------------------------------- */
+
+@media (max-width: 900px) {
+
+  .outerdiv {
+    grid-template-columns: 1fr;
+
+    padding: 70px 5%;
+  }
+
+  .innerdiv {
+    min-height: auto;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .outerdiv {
+    padding: 55px 25px;
+
+    gap: 18px;
+  }
+
+  .innerdiv {
+    padding: 25px;
+
+    border-radius: 14px;
+  }
+
+  .innerdiv h2 {
+    font-size: 21px;
+  }
+
+  .innerdiv p {
+    font-size: 14px;
+  }
+}
