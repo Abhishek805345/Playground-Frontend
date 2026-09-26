@@ -15,7 +15,7 @@
   border-radius: 1.1rem;
   background-color: #61605e70;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin:11px;
   padding:11px;
   width: 98vw;
@@ -31,7 +31,58 @@
   transition: all 0.25s ease;
   display: inline-block;
 }
+.centerdiv{
+  display: flex;
+  width:500px;
+  justify-content: space-between;
+}
+.rightdiv{
+  display: flex;
+  justify-content: space-between;
+}
+.divider {
+  display: inline-block;
 
+  color: rgba(255, 255, 255, 0.25);
+
+  font-size: 20px;
+  font-weight: 300;
+
+  margin: 0 8px;
+
+  vertical-align: middle;
+}
+
+
+/* Notification icon */
+
+.rightdiv .linkbut svg {
+  width: 21px;
+  height: 21px;
+
+  color: #f5bd27;
+
+  vertical-align: middle;
+
+  transition: all 0.25s ease;
+}
+
+
+/* Notification hover */
+
+.rightdiv .linkbut:hover {
+  background-color: rgba(245, 189, 39, 0.10);
+
+  box-shadow: none;
+
+  transform: translateY(-1px);
+}
+
+.rightdiv .linkbut:hover svg {
+  color: #ffd45a;
+
+  transform: scale(1.08);
+}
 .linkbut {
   text-decoration: none;
   color: white;

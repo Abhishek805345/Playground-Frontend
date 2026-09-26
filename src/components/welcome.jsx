@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import css from "../style/welcome.module.css";
-export function Nav(){
+import { IoIosNotifications } from "react-icons/io";
+import { RxDividerVertical } from "react-icons/rx";
+
+export function Nav() {
   return (
     <nav className={css.nav}>
       <div>
@@ -8,35 +11,40 @@ export function Nav(){
           Playground
         </Link>
       </div>
-      <div>
-        <Link to="" className={css.linkbut}>
-          Events
-        </Link>
+      <div className={css.centerdiv}>
+          <div>
+            <Link to="" className={css.linkbut}>
+              Events
+            </Link>
+          </div>
+          <div>
+            <Link to="" className={css.linkbut}>
+              Leader Board
+            </Link>
+          </div>
+          <div>
+            <Link to="" className={css.linkbut}>
+              Store
+            </Link>
+          </div>
       </div>
-      <div>
-        <Link to="" className={css.linkbut}>
-          Leader Board
-        </Link>
-      </div>
-      <div>
-        <Link to="" className={css.linkbut}>
-          Store
-        </Link>
-      </div>
-      <div>
-        <Link to="" className={css.linkbut}>
-          Notification
-        </Link>
-      </div>
-      <div>
-        <Link to="" className={css.login}>
-          Login
-        </Link>
+      <div className={css.rightdiv}> 
+          <div>
+            <Link to="" className={css.linkbut}>
+              <IoIosNotifications/>
+            </Link>
+            <span className={css.divider}><RxDividerVertical/></span>
+          </div>
+          <div>
+            <Link to="" className={css.login}>
+              Login
+            </Link>
+          </div>
       </div>
     </nav>
-  )
+  );
 }
 
-export const sessionLoader=()=>{
+export const sessionLoader = () => {
   return 0;
-}
+};
