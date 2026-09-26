@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import css from "../style/hero.module.css";
 import { Nav } from "./welcome";
 import { Info } from "./info";
+import { Footer } from "./footer";
 
 export function Hero(){
   return (
@@ -87,6 +88,7 @@ export function Hero(){
 
     </section>
     <Info/>
+    <Footer/>
     </>
   )
 }
