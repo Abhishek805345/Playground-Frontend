@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import css from "../style/welcome.module.css";
 import { IoIosNotifications } from "react-icons/io";
 import { RxDividerVertical } from "react-icons/rx";
+import { useState } from "react";
 
 export function Nav() {
+  const [state,changestate]=useState(null);
   return (
     <nav className={css.nav}>
       <div>
