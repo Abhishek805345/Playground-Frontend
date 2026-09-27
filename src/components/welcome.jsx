@@ -3,9 +3,13 @@ import css from "../style/welcome.module.css";
 import { IoIosNotifications } from "react-icons/io";
 import { RxDividerVertical } from "react-icons/rx";
 import Store, { statusAction } from "../utils/store.jsx";
+import { useSelector } from "react-redux";
+import { Notification } from "./notification.jsx";
 
 export function Nav() {
+  const {status}=useSelector(store=>store.statusReducer);
   return (
+    <>
     <nav className={css.nav}>
       <div>
         <Link to="/" className={css.logo}>
@@ -47,6 +51,8 @@ export function Nav() {
           </div>
       </div>
     </nav>
+    {status==="Notification"?<Notification/>:null}
+    </>
   );
 }
 

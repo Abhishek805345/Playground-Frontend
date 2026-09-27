@@ -3,11 +3,8 @@ import css from "../style/hero.module.css";
 import { Nav } from "./welcome";
 import { Info } from "./info";
 import { Footer } from "./footer";
-import {useSelector} from "react-redux"
-import { Notification } from "./notification";
 
 export function Hero(){
-  const {status}=useSelector(store=>store.statusReducer);
   return (
     <>
     <Nav/>
@@ -90,7 +87,6 @@ export function Hero(){
       </div>
 
     </section>
-    {status==="Notification"?<Notification/>:null}
     <Info/>
     <Footer/>
 

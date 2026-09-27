@@ -15,11 +15,10 @@ export function Info(){
       <div className={css.innerdiv}>
         <h2>Join Our Community</h2>
         <p>Become a part of Playground family! Register or log in to track your progress, participate in events, and connect with other enthusiasts.</p>
-        <Link to="">Register</Link>
+        <Link to="/register">Register</Link>
       </div>
       <div className={css.innerdiv}>
         <h2>Match Day Highlights</h2>
-        
       </div>
     </div>
   )
