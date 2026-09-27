@@ -6,7 +6,7 @@ const stateSlice=createSlice({
     status:"Hero"
   },
   reducers:{
-    StateChanger:(state,action)=>{
+    StatusChanger:(state,action)=>{
       state.status=action.payload.newstatus;
     }
   }
