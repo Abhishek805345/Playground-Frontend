@@ -1,0 +1,152 @@
+.outerdiv {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.1rem;
+  position: fixed;
+  top: 90px;
+  right: 140px;
+  width: 30vw;
+  height: fit-content;
+  max-height: 65vh;
+  z-index: 9;
+  background-color: rgba(25, 27, 30, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header p {
+  margin: 0;
+  color: #f5f5f5;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #aeb3bb;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.header a svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header a:hover {
+  color: #f5bd27;
+  background: rgba(245, 189, 39, 0.1);
+  transform: rotate(90deg);
+}
+
+.noties {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  max-height: calc(65vh - 60px);
+  overflow-y: auto;
+}
+
+.noties li {
+  position: relative;
+  padding: 15px 16px 15px 35px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  color: #c8cbd0;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.noties li::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 21px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f5bd27;
+  box-shadow: 0 0 8px rgba(245, 189, 39, 0.5);
+}
+
+.noties li:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  transform: translateX(2px);
+}
+
+.noties li:last-child {
+  margin-bottom: 0;
+}
+
+.noties::-webkit-scrollbar {
+  width: 5px;
+}
+
+.noties::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.noties::-webkit-scrollbar-thumb {
+  background: rgba(245, 189, 39, 0.4);
+  border-radius: 10px;
+}
+
+.noties::-webkit-scrollbar-thumb:hover {
+  background: #f5bd27;
+}
+
+@media (max-width: 900px) {
+  .outerdiv {
+    right: 25px;
+    width: 40vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .outerdiv {
+    top: 75px;
+    right: 15px;
+    left: 15px;
+    width: auto;
+    max-height: 70vh;
+    border-radius: 14px;
+  }
+
+  .header {
+    padding: 13px 15px;
+  }
+
+  .noties li {
+    padding: 13px 14px 13px 32px;
+    font-size: 13px;
+  }
+
+  .noties li::before {
+    left: 13px;
+  }
+}

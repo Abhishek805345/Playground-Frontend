@@ -4,6 +4,8 @@ import {createBrowserRouter,RouterProvider} from "react-router-dom";
 import App from './App.jsx'
 import { sessionLoader,Nav } from './components/welcome.jsx';
 import { Hero } from './components/hero.jsx';
+import { Provider } from 'react-redux';
+import Store from './utils/store.jsx';
 
 const routes=createBrowserRouter([
   {
@@ -15,8 +17,10 @@ const routes=createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Provider store={Store}>
     <RouterProvider router={routes}>
-        <App />
+          <App />
     </RouterProvider>
+    </Provider>
   </StrictMode>,
 )

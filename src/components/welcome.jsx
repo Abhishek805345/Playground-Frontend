@@ -2,10 +2,9 @@ import { Link } from "react-router-dom";
 import css from "../style/welcome.module.css";
 import { IoIosNotifications } from "react-icons/io";
 import { RxDividerVertical } from "react-icons/rx";
-import { useState } from "react";
+import Store, { statusAction } from "../utils/store.jsx";
 
 export function Nav() {
-  const [state,changestate]=useState(null);
   return (
     <nav className={css.nav}>
       <div>
@@ -32,7 +31,11 @@ export function Nav() {
       </div>
       <div className={css.rightdiv}> 
           <div>
-            <Link to="" className={css.linkbut}>
+            <Link to="" className={css.linkbut} onClick={()=>{
+                  Store.dispatch(statusAction.StatusChanger({
+                    newstatus:"Notification"
+                  })
+              )}}>
               <IoIosNotifications/>
             </Link>
             <span className={css.divider}><RxDividerVertical/></span>

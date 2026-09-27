@@ -8,13 +8,14 @@ const stateSlice=createSlice({
   reducers:{
     StatusChanger:(state,action)=>{
       state.status=action.payload.newstatus;
+      console.log("status is this ", state.status);
     }
   }
 })
 
 const Store=configureStore({reducer:{
-  stateReducer:stateSlice
+  statusReducer:stateSlice.reducer
 }})
 
 export default Store;
-export const stateAction =stateSlice.actions;
+export const statusAction =stateSlice.actions;
