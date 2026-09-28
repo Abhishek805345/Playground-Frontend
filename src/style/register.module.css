@@ -41,6 +41,7 @@
   transform: translateY(-35%);
   z-index: 2;
   width: 390px;
+  animation: textEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .heading {
@@ -70,6 +71,7 @@
   z-index: 2;
   width: 440px;
   margin-left: auto;
+  animation: formEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .outerdiv form {
@@ -179,6 +181,30 @@
   transform: translateX(1px);
 }
 
+@keyframes formEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes textEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(120px) translateY(-35%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(-35%);
+  }
+}
+
 @media (max-width: 1000px) {
   .leftsection {
     left: 5%;
@@ -228,6 +254,18 @@
     max-width: 440px;
     margin-left: 0;
   }
+
+  @keyframes textEnter {
+    0% {
+      opacity: 0;
+      transform: translateX(120px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 @media (max-width: 500px) {
@@ -256,4 +294,29 @@
   .outerdiv form select {
     height: 32px;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .outerdiv > div:last-child,
+  .leftsection {
+    animation: none;
+  }
+}
+.outerdiv > div:last-child > a {
+  display: block;
+  width: fit-content;
+  margin: 12px 3px 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.408);
+  border-radius: 1.1rem;
+  padding:3px 7px;
+  color: #858b94;
+  text-decoration: none;
+  font-size: 11px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.outerdiv > div:last-child > a:hover {
+  color: #f5bd27;
+  transform: translateX(-2px);
+  border-color: #f5bd27;
 }

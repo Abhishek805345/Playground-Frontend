@@ -1,4 +1,4 @@
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import css from "../style/register.module.css";
 import { Nav } from "./welcome";
 import { FaArrowRight } from "react-icons/fa";
@@ -125,6 +125,7 @@ export function Register(){
             <FaArrowRight />
           </button>
         </Form>
+        <Link to="/login">Login</Link>
       </div>
     </div>
     </>

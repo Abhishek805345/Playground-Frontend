@@ -7,6 +7,7 @@ import { Hero } from './components/hero.jsx';
 import { Provider } from 'react-redux';
 import Store from './utils/store.jsx';
 import { Register, RegisterAction } from './components/register.jsx';
+import { Login } from './components/login.jsx';
 
 const routes=createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const routes=createBrowserRouter([
     path:"/register",
     element:<Register/>,
     action:RegisterAction
+  },
+  {
+    path:"/login",
+    element:<Login/>
+    
   }
 ])
 

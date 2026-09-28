@@ -45,7 +45,7 @@ export function Nav() {
             <span className={css.divider}><RxDividerVertical/></span>
           </div>
           <div>
-            <Link to="" className={css.login}>
+            <Link to="/login" className={css.login}>
               Login
             </Link>
           </div>
