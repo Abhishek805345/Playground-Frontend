@@ -5,9 +5,11 @@ import { RxDividerVertical } from "react-icons/rx";
 import Store, { statusAction } from "../utils/store.jsx";
 import { useSelector } from "react-redux";
 import { Notification } from "./notification.jsx";
+import { FaRegUserCircle } from "react-icons/fa";
 
 export function Nav() {
   const {status}=useSelector(store=>store.statusReducer);
+  const {isAuthenticated}=useSelector(store=>store.userReducer);
   return (
     <>
     <nav className={css.nav}>
@@ -34,6 +36,7 @@ export function Nav() {
           </div>
       </div>
       <div className={css.rightdiv}> 
+          {isAuthenticated===true?
           <div>
             <Link to="" className={css.linkbut} onClick={()=>{
                   Store.dispatch(statusAction.StatusChanger({
@@ -43,12 +46,24 @@ export function Nav() {
               <IoIosNotifications/>
             </Link>
             <span className={css.divider}><RxDividerVertical/></span>
+          </div>:null  
+        }
+         {isAuthenticated===true?
+          <FaRegUserCircle/>
+         :
+         <>
+          <div>
+            <Link to="/register" className={css.register}>
+              Register
+            </Link>
           </div>
           <div>
             <Link to="/login" className={css.login}>
               Login
             </Link>
           </div>
+         </>
+         }
       </div>
     </nav>
     {status==="Notification"?<Notification/>:null}

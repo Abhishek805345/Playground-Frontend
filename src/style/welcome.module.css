@@ -118,4 +118,31 @@
   border-radius: 0.7rem;
   transition: all 0.25s ease;
   display: inline-block;
+  margin:0px 3px;
+}
+.register{
+  text-decoration: none;
+  color: #ffd45a;
+
+  /* Added */
+  letter-spacing: 0.3px;
+  padding: 9px 16px;
+  border:1px solid rgb(233, 213, 82);
+  border-radius: 0.7rem;
+  transition: all 0.25s ease;
+  display: inline-block;
+  margin:0px 3px;
+}
+.rightdiv > svg {
+  width: 24px;
+  height: 24px;
+  margin: 5px 12px;
+  color: #f5bd27;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.rightdiv > svg:hover {
+  color: #ffd45a;
+  transform: scale(1.08);
 }

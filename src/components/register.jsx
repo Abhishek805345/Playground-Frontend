@@ -117,7 +117,10 @@ export function Register(){
             <option value="Uttarakhand">Uttarakhand</option>
             <option value="West Bengal">West Bengal</option>
           </select>
-
+          <select name="position" required>
+            <option value="player">Player</option>
+            <option value="coach">Coach</option>
+          </select>
           <label>Agree:</label>
           <input type="radio" name="aggrement" />
 
@@ -140,7 +143,7 @@ export const RegisterAction=async ({request})=>{
   if (data.password===data.confirmpassword){
     const result=await registerapi(data);
     if (result.status===true){
-      return Response.redirect('/');
+      return Response.redirect('/login');
     }else if (result.status===false){
       Store.dispatch(statusAction.ErrorChanger({
         newerrormsg:"UserAlreadyExists"
