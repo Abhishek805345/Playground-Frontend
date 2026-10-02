@@ -76,9 +76,7 @@ export const loginAction=async ({request})=>{
     Store.dispatch(userAction.fullnameChanger({
       newfullname:result.userdetails.fullname
     }))
-    Store.dispatch(statusAction.StatusChanger({
-      newstatus:"Hero"
-    }))
+   return Response.redirect("/");
   }else if (result.status===false){
     Store.dispatch(statusAction.ErrorChanger({
       newerrormsg:"NoUserFound"
