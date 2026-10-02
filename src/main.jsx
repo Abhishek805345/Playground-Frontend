@@ -7,7 +7,7 @@ import { Hero } from './components/hero.jsx';
 import { Provider } from 'react-redux';
 import Store from './utils/store.jsx';
 import { Register, RegisterAction } from './components/register.jsx';
-import { Login, loginAction } from './components/login.jsx';
+import { Login, loginAction, loginLoader } from './components/login.jsx';
 
 const routes=createBrowserRouter([
   {
@@ -23,7 +23,8 @@ const routes=createBrowserRouter([
   {
     path:"/login",
     element:<Login/>,
-    action:loginAction
+    action:loginAction,
+    loader:loginLoader
   }
 ])
 

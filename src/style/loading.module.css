@@ -1,0 +1,220 @@
+
+.loader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(245, 189, 39, 0.09), transparent 38%),
+    #080b0f;
+  color: #f5f5f5;
+  z-index: 9999;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border: 1px solid rgba(255, 255, 255, 0.025);
+  border-radius: 50%;
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  border-radius: 50%;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #f5f5f5;
+  margin-bottom: 45px;
+}
+
+.logo span {
+  color: #f5bd27;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.ballWrapper {
+  position: relative;
+  width: 115px;
+  height: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 38px;
+}
+
+.loaderRing {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(245, 189, 39, 0.12);
+  border-top-color: #f5bd27;
+  border-right-color: rgba(245, 189, 39, 0.5);
+  border-radius: 50%;
+  animation: rotate 1.3s linear infinite;
+  filter: drop-shadow(0 0 7px rgba(245, 189, 39, 0.35));
+}
+
+.ball {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #ffdb65, #e6a900 70%, #9f6900);
+  box-shadow:
+    0 0 22px rgba(245, 189, 39, 0.2),
+    inset -4px -5px 8px rgba(0, 0, 0, 0.22);
+  animation: ballFloat 2s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.ballSeam {
+  position: absolute;
+  width: 23px;
+  height: 55px;
+  top: -4px;
+  left: 12px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transform: rotate(35deg);
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #f5f5f5;
+}
+
+.loadingText {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 16px;
+  color: #858b94;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.loadingText span {
+  font-size: inherit;
+}
+
+.dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.dots span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #f5bd27;
+  animation: dotPulse 1.2s ease-in-out infinite;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.bottomText {
+  position: absolute;
+  bottom: 35px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #777e87;
+}
+
+.bottomText span {
+  color: #f5bd27;
+  margin: 0 6px;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ballFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes dotPulse {
+  0%, 60%, 100% {
+    opacity: 0.25;
+    transform: scale(0.7);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    font-size: 20px;
+    margin-bottom: 38px;
+  }
+
+  .ballWrapper {
+    width: 95px;
+    height: 95px;
+  }
+
+  .ball {
+    width: 42px;
+    height: 42px;
+  }
+
+  .content h2 {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .bottomText {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loaderRing,
+  .ball,
+  .dots span {
+    animation: none;
+  }
+}

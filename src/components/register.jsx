@@ -5,12 +5,15 @@ import { FaArrowRight } from "react-icons/fa";
 import { registerapi } from "../../Services/authAPI's";
 import Store, { statusAction } from "../utils/store";
 import { useSelector } from "react-redux";
+import { Loading } from "./loading";
 
 export function Register(){
-  const {errormsg}=useSelector(store=>store.statusReducer)
+  const {errormsg,status}=useSelector(store=>store.statusReducer)
   return (
     <>
-    <Nav/>
+    {status==="Loading"?<Loading/>:
+    <div>
+          <Nav/>
         <div className={css.outerdiv}>
       <div className={css.leftsection}>
         <p className={css.heading}>Hey User Welcome</p>
@@ -131,27 +134,39 @@ export function Register(){
         <Link to="/login">Login</Link>
       </div>
     </div>
+    </div>
+    }
+    
     </>
   )
 }
 
 
 export const RegisterAction=async ({request})=>{
+  Store.dispatch(statusAction.StatusChanger({             //enabling the loading screen
+    newstatus:"Loading"   
+  }))
   const formdata=await request.formData();
   const data=Object.fromEntries(formdata);
   console.log(data);
   if (data.password===data.confirmpassword){
     const result=await registerapi(data);
     if (result.status===true){
-      return Response.redirect('/login');
+      return Response.redirect('/login');               //disable the loading screen after successful login in /login loader
     }else if (result.status===false){
       Store.dispatch(statusAction.ErrorChanger({
         newerrormsg:"UserAlreadyExists"
+      }))
+      Store.dispatch(statusAction.StatusChanger({
+        newstatus:"Hero"
       }))
     }
   }else{
     Store.dispatch(statusAction.ErrorChanger({
       newerrormsg:"FillPasswordSame"
+    }))
+    Store.dispatch(statusAction.StatusChanger({
+      newstatus:"Hero"
     }))
   }
   

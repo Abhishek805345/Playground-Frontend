@@ -49,7 +49,18 @@ export function Login(){
 }
 
 
+
+export const loginLoader=()=>{
+  Store.dispatch(statusAction.StatusChanger({
+    newstatus:"Hero"
+  }))
+}
+
+
 export const loginAction=async ({request})=>{
+  Store.dispatch(statusAction.StatusChanger({       //enabling the loading screen
+    newstatus:"Loading"
+  }))
   const formdata=await request.formData();
   const data=Object.fromEntries(formdata);
   const result=await loginAPI(data);
@@ -65,13 +76,22 @@ export const loginAction=async ({request})=>{
     Store.dispatch(userAction.fullnameChanger({
       newfullname:result.userdetails.fullname
     }))
+    Store.dispatch(statusAction.StatusChanger({
+      newstatus:"Hero"
+    }))
   }else if (result.status===false){
     Store.dispatch(statusAction.ErrorChanger({
       newerrormsg:"NoUserFound"
     }))
+    Store.dispatch(statusAction.StatusChanger({
+        newstatus:"Hero"
+      }))
   }else if (result.status==="wrongPasswordOrPosition"){
     Store.dispatch(statusAction.ErrorChanger({
       newerrormsg:"wrongPasswordOrPosition"
     }))
+    Store.dispatch(statusAction.StatusChanger({
+        newstatus:"Hero"
+      }))
   }
 }
